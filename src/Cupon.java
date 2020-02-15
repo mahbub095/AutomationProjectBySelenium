@@ -52,7 +52,7 @@ public class Cupon {
 		        for (int i=0; i<1; i++) {											
 		        	productlist.click (); 	
 		        	
-		        	driver.findElement(By.name("title")).sendKeys("ADDDgGGDD");
+		        	driver.findElement(By.name("title")).sendKeys("ABCDEF");
 		        	driver.findElement(By.name("description")).sendKeys("DemoDemoDemoDemoDemoDemoDemo");
 		        	Select fruits = new Select(driver.findElement(By.id("discount_type")));
 		        	fruits.selectByVisibleText("Percentage Discount");
@@ -67,7 +67,13 @@ public class Cupon {
 		   		driver.findElement(By.xpath("//li[text()='DDD']")).click();
                 driver.findElement(By.id("checkboxes-3")).click();   
                 driver.findElement(By.name("coupon_creation")).click();
+                
 		        }
+		        
+		        WebElement logout = driver.findElement(By.linkText("Log out"));	
+		        for (int i=0; i<1; i++) {											
+		        	logout.click (); 			
+		             }
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
