@@ -64,6 +64,16 @@ public class User {
 			     
 			        for (int i=0; i<1; i++) {											
 			        	cart.click (); 
+			        	driver.findElement(By.name("add-to-cart")).click();
+			        	driver.findElement(By.linkText("View cart")).click();
+			        	//driver.findElement(By.name("coupon_code")).sendKeys("ABCDEF");
+			        
+			        //	driver.findElement(By.name("apply_coupon")).click();
+			        	driver.findElement(By.linkText("Proceed to checkout")).click();
+			        	 
+			        	//coupon_code
+			        	 
+			        	//add-to-cart
 			           }
 			        
 			   
