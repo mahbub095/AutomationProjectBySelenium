@@ -1,15 +1,11 @@
- 
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
 
-
-
-public class Login {
+public class Order {
 
 	WebDriver driver;	
 //	ArrayList locatorList = new ArrayList<By>();
@@ -47,18 +43,11 @@ public class Login {
 		            chkFBPersist.click (); 			
 		             }
 		        
-		        WebElement productlist = driver.findElement(By.linkText("Add new product"));	
+		        WebElement productlist = driver.findElement(By.linkText("Orders"));	
 		        for (int i=0; i<1; i++) {											
 		        	productlist.click (); 	
-             
-		           driver.findElement(By.name("post_title")).sendKeys("A");
-		           driver.findElement(By.name("_regular_price")).sendKeys("1234");
-		           driver.findElement(By.name("_sale_price")).sendKeys("12");
-		           driver.findElement(By.xpath("//*[contains(@class, 'select2-selection__arrow')]")).click() ; 
-	               driver.findElement(By.xpath("//*[contains(@class, 'select2-search--dropdown')]//*[contains(@class, 'select2-search__field')]")).sendKeys("u");
-	               driver.findElement(By.xpath("//li[text()='Uncategorized']")).click(); 
-	               driver.findElement(By.name("post_excerpt")).sendKeys("DUmmyDUmmyDUmmyDUmmyDUmmy");
-	               driver.findElement(By.id("dokan-create-and-add-new-product-btn")).click();
+                    driver.findElement(By.xpath("//*[contains(@class, 'dokan-table')]/tbody/tr[2]/td[7]/a")).click(); 
+	                
 	                
 		        }
 		} catch (Exception e) {
@@ -68,10 +57,7 @@ public class Login {
 		}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Login myObj = new Login();
+		Order myObj = new Order();
 		myObj.invokeBrowser();
 	}
-	
- 
-	
 }
