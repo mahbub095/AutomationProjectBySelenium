@@ -76,18 +76,26 @@ public class User {
 				     
 				        for (int i=0; i<1; i++) {											
 				        	checckout.click (); 
-				        	driver.findElement(By.name("add-to-cart")).click();
-				        	driver.findElement(By.linkText("View cart")).click();
-			                driver.findElement(By.linkText("Proceed to checkout")).click(); 
-				        	driver.findElement(By.name("billing_first_name")).sendKeys("Mahbubur");
-				        	driver.findElement(By.name("billing_last_name")).sendKeys("Rahman");
+				    
+				        	driver.findElement(By.id("billing_first_name")).sendKeys("Mahbubur");
+				        	driver.findElement(By.id("billing_last_name")).sendKeys("Rahman");
+				        	
+				        	driver.findElement(By.xpath("//*[@id='billing_country_field']//*[contains(@class, 'select2-selection__arrow')]")).click() ;
+				        	driver.findElement(By.xpath("//li[text()='Bangladesh']")).click();
 				        	driver.findElement(By.name("billing_address_1")).sendKeys("Dhaka");
 				        	driver.findElement(By.name("billing_city")).sendKeys("DDDD");
-				        	driver.findElement(By.name("billing_postcode")).sendKeys("99999");
-				        	driver.findElement(By.name("billing_phone")).sendKeys("12345678");
+				        	driver.findElement(By.xpath("//*[@id='billing_state_field']//*[contains(@class, 'select2-selection__arrow')]")).click() ;
+				        	driver.findElement(By.xpath("//li[text()='Dhaka']")).click();
+				        	 
+				        	driver.findElement(By.name("billing_postcode")).sendKeys("1207");
+				        	driver.findElement(By.name("billing_phone")).sendKeys("01671816194");
+				        	driver.findElement(By.linkText("Place order")).click();
+				        	
 				        	
 				   
 				           }
+				        
+				      
 		
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
