@@ -66,22 +66,29 @@ public class User {
 			        	cart.click (); 
 			        	driver.findElement(By.name("add-to-cart")).click();
 			        	driver.findElement(By.linkText("View cart")).click();
-			        	//driver.findElement(By.name("coupon_code")).sendKeys("ABCDEF");
-			        
-			        //	driver.findElement(By.name("apply_coupon")).click();
-			        	driver.findElement(By.linkText("Proceed to checkout")).click();
-			        	 
-			        	//coupon_code
-			        	 
-			        	//add-to-cart
+			      
+			   
 			           }
 			        
-			   
-			       
-			       
-			       
-			         
-				
+			        
+			        WebElement checckout = driver.findElement(By.linkText("Proceed to checkout"));	
+				      //  WebElement addcart = driver.findElement(By.linkText("Add to cart"));	
+				     
+				        for (int i=0; i<1; i++) {											
+				        	checckout.click (); 
+				        	driver.findElement(By.name("add-to-cart")).click();
+				        	driver.findElement(By.linkText("View cart")).click();
+			                driver.findElement(By.linkText("Proceed to checkout")).click(); 
+				        	driver.findElement(By.name("billing_first_name")).sendKeys("Mahbubur");
+				        	driver.findElement(By.name("billing_last_name")).sendKeys("Rahman");
+				        	driver.findElement(By.name("billing_address_1")).sendKeys("Dhaka");
+				        	driver.findElement(By.name("billing_city")).sendKeys("DDDD");
+				        	driver.findElement(By.name("billing_postcode")).sendKeys("99999");
+				        	driver.findElement(By.name("billing_phone")).sendKeys("12345678");
+				        	
+				   
+				           }
+		
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
